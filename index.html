@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Business use cases for the use of Linguistic Linked Data in content analytics processes - Phase II</title>
+    <meta charset='utf-8'>
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common'
+            async class='remove'></script>
+	<link rel="stylesheet" href="stylesheets/codemirror.css"> 
+	<script src="javascripts/codemirror-compressed.js"></script>
+	<script src="http://codemirror.net/mode/sparql/sparql.js"></script>
+	<script src="http://codemirror.net/addon/runmode/runmode.js"></script>
+	<script src="http://codemirror.net/addon/runmode/colorize.js"></script>
+
+    <script class='remove'>
+      var respecConfig = {
+
+          specStatus: "CG-FINAL",
+          doRDFa: "1.1",
+          shortName:  "business-use-cases-LIDER",
+          editors: [
+                {   name:       "Kevin Koidl",
+                    url:        "https://www.cs.tcd.ie/Kevin.Koidl/",
+                    company:    "Trinity College Dublin",
+                    companyURL: "http://www.tcd.ie/" }
+          ],
+		  authors: [
+                {   name:       "Kevin Koidl",
+                    url:        "https://www.cs.tcd.ie/Kevin.Koidl/",
+                    company:    "Trinity College Dublin",
+                    companyURL: "http://www.tcd.ie/" },
+			  	{   name:       "David Lewis",
+					url:        "https://www.cs.tcd.ie/Dave.Lewis/",
+				  	company:    "Trinity College Dublin",
+				  	companyURL: "http://www.tcd.ie/" },
+			  	{   name:       "Paul Buitelaar",
+                    url:        "https://www.insight-centre.org/users/paul-buitelaar",
+                    company:    "National University of Ireland, Galway (NUIG)",
+                    companyURL: "http://www.nuigalway.ie/" },
+			  {   name:       "Georgeta Bordea",
+				  url:        "https://www.insight-centre.org/users/georgeta-bordea",
+				  company:    "National University of Ireland, Galway (NUIG)",
+				  companyURL: "http://www.nuigalway.ie/" },
+          ],
+		  previousMaturity: "CG-DRAFT",
+	      previousPublishDate:  "2015-08-01",
+
+		  //What change is needed here?
+
+		  wg:           "Best Practices for Multilingual Linked Open Data",
+          wgURI:        "http://www.w3.org/community/bpmlod/",
+          wgPublicList: "http://lists.w3.org/Archives/Public/public-bpmlod/",
+//          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/424242/status",
+      };
+    </script>
+	<link rel="stylesheet" href="stylesheets/codemirror.css">
+    <script src="javascripts/codemirror.js"></script>
+  </head>
+  <body>
+    <section id='abstract'>
+      <p>
+		  This deliverable presents the final results of the effort in the LIDER project related to WP1 on the identification of business requirements and use cases in content analytics, in particular related to the generation and use of Linguistic Linked Data. The deliverable presents the results arising from a variety of instruments conducted though the W3C Ld4LT Community Group, including, structured interviews, surveys, roadmapping workshops and seed use cases. The deliverable summarizes the insights gained from each of these instruments as well as drawing some general conclusions, leading to a number of recommendations for the definition of a Roadmap for Linguistic Linked Data in business.
+      </p>
+    </section>
+
+    <section id='sotd'>
+  <!--    <p>This document was published by the <a href="http://www.w3.org/community/bpmlod/">Best Practices for Multilingual Linked Open Data</a> community group.
+       It is not a W3C Standard nor is it on the W3C Standards Track.</p>
+  -->
+
+					<p>There are a number of ways that one may participate in the development of this report:</p>
+      <ul>
+      <li>Mailing list: <a href="http://lists.w3.org/Archives/Public/public-bpmlod/">public-bpmlod@w3.org</a>
+      <li>Wiki: <a href="https://www.w3.org/community/bpmlod/wiki/Main_Page">Main page</a>
+      <li>More information about meetings of the BPMLOD group can be obtained
+        <a href="https://www.w3.org/community/bpmlod/wiki/Meetings_of_the_community_group">here</a></li>
+
+	  <li><a href="https://github.com/bpmlod/report">Source code</a> 
+	     for this document can be found on Github.</li>
+      </ul>
+    </section>
+
+
+
+   <p>
+      <h1>1. Introduction and Methodology </h1>
+      <p>This deliverable presents the final results of the effort in the LIDER project related to WP1 on the identification of business use cases in content analytics, in particular in regard of the generation and use of Linguistic Linked Data. The deliverable presents the outcomes of this effort, which employed a variety of instruments, including interviews, surveys, roadmapping workshops and seed use cases provided by Industrial Board members. The deliverable summarizes the insights gained from each of these as well as drawing some general conclusions, leading to a number of recommendations for the production of guidelines and best practices (WP2) and the definition of a Roadmap for Linguistic Linked Data in business (WP3).
+		  The work presented in the context of this deliverable has been advanced by using a variety of instruments, each of which resulted in a set of outcomes that are described below in the following sections:
+	  </p>
+
+
+	   <p><b>Section 2: Content Analytics Industry Interviews</b><br>
+	   An important instrument employed in the second year of the project has been to conduct in-depth interviews with a number of representatives from the multilingual industries such as content and knowledge localization, multilingual terminology and taxonomy management, cross-border business intelligence, etc.
+</p>
+
+	<p><b>Section 3: Content Analytics Industry Use Cases</b><br>
+	   Members of the Industrial Board (constituted in WP4) have been engaged to define a set of business use cases to describe the use of Linguistic Linked Data in content analytics processes (Task 1.1). The consortium, with the assistance of members of the Industrial Board has conducted an initial analysis of these use cases to extract requirements in exploiting Linguistic Linked Data in content analytics and identified common and frequent tasks in content analytics that require NLP and Linguistic Linked Data (Task 1.2). The identification of these tasks relied on formation of the Industrial Board (Task 4.1), in the form of the Linked Data for Language Technology (LD4LT) W3C Community Group .
+	</p>
+		<p><b> Section 4: Content Analytics Industry Surveys</b><br>
+	   An initial online questionnaire was deployed via the LD4LT W3C Community Group. This elicited information on language technology application areas of interest, the levels of awareness/maturity in using linked data and their industry sectors.
+		</p>
+			<p><b> Section 5: Content Analytics Industry Roadmapping Workshops</b><br>
+	   Based on and in parallel to the uptake and outcome of this questionnaire, a number of roadmapping workshops were organized by WP4: the outcome of which are summaries here
+			</p>
+				<p><b> Section 6: Consolidated Recommendations</b><br>
+	   A set of consolidated recommendations on the current and future generation and use of Linguistic Linked Data in the content analytics industry will be presented in section 6.
+				</p>
+
+
+   </section> 
+  
+	<section>
+      <h2>1.1	Execution of Methodology</h2>
+      <p>
+
+		  Though the medium of the LD4LT Community, LIDER has worked to capture a set of requirements and use cases to guide the development of a technical architecture, best practice and a research and innovation roadmap for linguistic linked data.
+</p>
+
+		<p><b>Requirements and use cases were gathered through the following channels:</b></p>
+
+		<ul>
+
+			<li>An <b>online survey</b> (24 responders) to gather initial input on requirements and use cases for linguistic linked data, targeting the linked data, multilingual web and language technology research and user communities.</li>
+			<li>Engagement with the European <b>research and industrial linked data user community</b> at the European Data Forum in Athens 19-20th March 2014, primarily through a co-located, one day LD4LT Roadmapping workshop on the 21st March 2014 (43 participants). This workshop also attracted several practitioners in linguistic data who had not yet engaged with linked data. The roadmapping workshop included an interactive requirements and use case gathering session, and was summarised in deliverable [D4.5].</li>
+			<li>Engagement with the <b>Multilingual Web community</b>, which has developed around a workshop series and standardisation activities organised by the W3C with support of EU funding. This community gathers industry and public sector practitioners and researchers with a shared interest in interoperability of multilingual content on the WWW. This community has exhibited a growing interest in multilingual data on the web and its relationship to multilingual content and the use of language technology on the Web. Engagement was conducted via the latest in the series of Multilingual Web workshops, organised by LIDER and held in Madrid on 8-9th May 2014. This involved local requirements and use case questionnaire (35 responders, half from industry, 30% from public sector – excluding researchers) and a further co-located LD4LT Roadmapping workshop (44 attendees). The workshop is reported in deliverable [D4.6] and involved an interactive requirements and use case gathering session.</li>
+			<li>Engagement with the international <b>localisation industry</b> at its flagship conference event, localisation World, when held in Dublin on 4-6th June 2014.  Engagement was through LD4LT presence at a local partner stand (CNGL at TCD) in the conference exhibition, from where a local questionnaire was conducted (27 responders, two third industrial).It was also conducted through a half day, co-located LD4LT Roadmapping workshop help as part of the Federated Event for Integrating Standards for Globalization, Internationalisation, Localization and Translation Technologies. This event is regularly co-located with Localisation World and attracts industry and academic expert who active in groups and committees at W3C, OASIS, ETSI, ISO and others that are developing interoperable solutions and harmonising standards for this industry.  While linked data is a relatively unknown technology in this industry, key interoperability platform developers are now starting to explore this technology. Based on interest, further linked data talks and demonstrations were given in collaboration with the FALCON project at LocWorld in Vancouver 29-31St October 2014. The workshop was reported in [D4.6] and included an interactive requirements and use case gathering session. </li>
+			<li>Engagement with the international <b>language resource community</b>. This has be conducted through direct top level engagement with the main communities in this area including the European Language Resources Association, the META-SHARE community which develops and maintains an EU funded network of language resource meta-data repositories and the Language Resource and Evaluation community, which is focussed on the two yearly LRE Conference from which it collects a repository of language resource meta-data. The primary requirements and use case gather exercise was via the LREC conference in Reykjavik 26-31 May 2014. Here, a LIDER: organised a tutorial on linguistic linked data ran a booth in the conference exhibition. This raised awareness, enabled face-to-face use case capture and execution of a local questionnaire (65 responders, 12% industrial).</li>
+			<li>Engagement with the <b>content analytics community </b> at a Roadmapping workshop on the 2nd September 2014, co-located with the SEMANTICS in Leipzig. Here several providers of commercial analytics services presented their requirements, accompanied by some public sector publishers of linguistic data. An open session was used to consolidate the requirements captures and to discuss priorities.</li>
+
+</ul>
+
+	  <p>
+
+		  The detailed requirements and use case results from the first two activities listed above, together with further requirements and use cases gathered from public output of other groups and projects, were previosuly recorded in the preliminary deliverable [D1.1.1] in April 2014. Results of ongoing requirements and use case gathering and analysis are posted as they emerge on the
+		  <a href="https://www.w3.org/community/ld4lt/wiki/Main_Page">LD4LT wiki</a> wiki to inform and attract feedback from the community. This deliverable provides a consolidated presentation and analysis of all results.
+
+      </p>
+
+	</section>
+
+	<section>
+		<h2>1.2	Classification Framework</h2>
+		<p>
+
+			<b>To help present some of the requirements and use cases gathered a broad categorisation scheme was adopted to help differentiate major classes of contributors and their overlaps. This was structured as follows: </b>
+
+		</p>
+
+
+		<ul>
+
+			<li><b>Global Customer Engagement Use Cases:</b> This reflects use cases offered that are typically concerns of commercial organisations. These address different aspects of how companies interact with their customers with global markets across different linguistic and cultural norms. This involves the translation and localisation of content generated by companies for consumption by customers or potential customers and support for content search across those languages. This typically requires domain-specific multilingual language resources to support language technology such as machine translation and multilingual search and indexing. Increasingly however, customer engagement involves the ability to analyse content generated by customers and other third parties as they comment on, review, pose questions about or provide answers on specific products and services via numerous digital channels. Such content analytics needs to undertaken in the languages of all target markets and is increasingly used to guide marketing, sales and customer support activities in and across those markets. Providers of specialised digital support services, such as language services (translation) and content analytics (including sentiment analysis) are important sources of use cases, reflecting the growth and innovation in value chains in bringing language resources and technology to commercial applications. Actors in this area are strongly motivated by cost, barriers to entry and being able to demonstrate return on investment.</li>
+			<li><b>Public Sector and Civil Society Use Cases:</b> the Public Sector has been an early adopter of linked data. They emphasise the use of linked open data motivated by transparency requirements and open data obligations that are increasingly common in national and transnational public administration. Such open data includes content which may benefit from linguistic annotation or which may serve as linguistic corpora, e.g. DG-T annual release of it translation memory, which is the most popular download from the European Commission’s Open Data portal. The public sector, non-governmental organisations, non-profits representing specific domains, and academia also work to curate high quality language resource, including dictionaries and lexicons for public consumption. as many of these are voluntary organisations, rather than those in receipt of direct public funding, we include Civil Society in this sector. This could also encompass professional organisations and trade association of different types. Easing public discovery and access to these resources is an important driver for considering linguistic linked data techniques. Finally, large-scale communities organised as international non-profits are also providing major crowd-sourced language resources. While these bodies are also interested in adopting language technologies, their financial resources are limited so the emphasis is on the availability of open source solutions that are compatible with available language resources.</li>
+			<li><b>Linguistic Linked Data Life Cycle and Value Network Requirements:</b> While individual commercial, public sector and other civil society actors are typically focussed on their own use cases, common themes often emerge. These highlight dependencies between organisations in different sectors in publishing, discovering, using and enhancing linguistic linked data as an asset with value in content processing, content analytics and the application of language technology. Such dependencies highlight the need for a life-cycle view of linguistic linked data. This helps the understanding how its quality as produced on annotated by one actor interacts with the value it provides to other actors. It also reveals how the costs involved in publishing and accessing data impact on the value exchanged by those actors, e.g. resource licensing, overcoming technical interoperability barriers, evaluating quality and compliance to data protection rules (as reported in [D4.7]). These issues are often highlighted and pursues by research organisations, who may work in partnership with actors from the other two areas, but which are primarily motivated by developing horizont interoperability and technology solutions.
+			</li>
+
+		</ul>
+
+		<p>
+
+			These areas are overlapping, but they provide a structure for categorising use cases and requirements and thereby targeting the portions of the community to engage with when advancing the technical, best practice and roadmapping activities in LIDER.  The structure showing figure 1 is used therefore to help classify and thereby more clearly analyse the requirements and use cases gathered.
+
+		</p>
+
+
+		<figure id="fig1">
+			<center>
+				<img style="width: 60%" src="./img/Classification_Framework.png" alt="Classification Framework for analysis of requirements and use cases">
+				<figcaption><span class="fig-title">Classification Framework for analysis of requirements and use cases</span></figcaption>
+			</center>
+		</figure>
+
+	</section>
+
+
+
+ 
+    <section>
+      <h1>2	Content Analytics Industry Interviews</h1>
+
+		<p>An important instrument employed in the second year of the project has been to conduct in-depth interviews with a number of representatives from the multilingual industries such as content and knowledge localization, multilingual terminology and taxonomy management, cross-border business intelligence, etc., in order to establish the views of these industries as well the companies they serve (i.e. MNCs). The interviews were conducted over a period of several weeks, with each of the LIDER partners interviewing one or more of the identified companies.</p>
+
+		<p><b>Please note:</b> As most companies only agreed to anonymous interviews, only a partial list of interviewed companies can be given, as follows:</p>
+
+
+		<table border="1" style="width:100%">
+			<tr>
+				<td><b>Company</b></td>
+				<td><b>Company Contact</b></td>
+				<td><b>Business Area</b></td>
+			</tr>
+			<tr>
+				<td>ExpertSystem</td>
+				<td>Francesco Danza</td>
+				<td>Business Intelligence</td>
+			</tr>
+			<tr>
+				<td>Adoreboard</td>
+				<td>Fergal Monaghan</td>
+				<td>Brand Reputation Management</td>
+			</tr>
+			<tr>
+				<td>Oxford University Press</td>
+				<td>Roser Sauri</td>
+				<td>Lexicography</td>
+			</tr>
+			<tr>
+				<td>Linguaserve</td>
+				<td>Pedro Diez</td>
+				<td>Marketing</td>
+			</tr>
+			<tr>
+				<td>Taiger/playence</td>
+				<td>Carlos Ruiz</td>
+				<td>Technology provider on semantic technologies</td>
+			</tr>
+			<tr>
+				<td>Vector</td>
+				<td>Carlos Ortega</td>
+				<td>Software factory specialized in bank and retails</td>
+			</tr>
+			<tr>
+				<td>Center for Neuronal Regeneration (CNR)</td>
+				<td>Prof. Hans Werner Müller</td>
+				<td>Medical research and translation</td>
+			</tr>
+			<tr>
+				<td>XTM</td>
+				<td>Andrzej Zydroń</td>
+				<td>CAT</td>
+			</tr>
+			<tr>
+				<td>Translated</td>
+				<td>Marco Trombetti</td>
+				<td>CAT</td>
+			</tr>
+			<tr>
+				<td>Dandelion</td>
+				<td>Michele Barbera</td>
+				<td>Technology provider on semantic technologies</td>
+			</tr>
+			<tr>
+				<td>Kdictionaries</td>
+				<td>Ilan Kernerman</td>
+				<td>technology-oriented content creation, multilingual lexicographic resources</td>
+			</tr>
+			<tr>
+				<td>WoltersKluwer</td>
+				<td>Christian Dirschl</td>
+				<td>knowledge and information service provider</td>
+			</tr>
+			<tr>
+				<td>Easyling</td>
+				<td>Balasz Benedek</td>
+				<td>Web site translation solution</td>
+			</tr>
+			<tr>
+				<td>Interverbum</td>
+				<td>Ioannis Iokovidis</td>
+				<td>Terminology management solution</td>
+			</tr>
+			<tr>
+				<td>VistaTEC</td>
+				<td>Phil Richie</td>
+				<td>Language Service Provider</td>
+			</tr>
+		</table>
+
+		<p>
+		The selected company representatives were invited by use of the following introductory text. We emphasized the core objective of the interviews, which has been to establish industry current practice and envisioned requirements in multilingual data processing:
+		</p>
+
+		<table border="1" style="width:100%">
+			<tr>
+				<td><i>The EU project LIDER has been tasked by the European Commission to put together a roadmap for future R&D funding in multilingual industries such as content and knowledge localization, multilingual terminology and taxonomy management, cross-border business intelligence, etc. As a leading supplier of solutions in one or more of these industries, we would need your input for this roadmap. We would like to conduct a short interview with you to establish your views on current and developing R&D efforts in multilingual and semantic technologies that will likely play an increasing role in these industries, such as Linked Data and related standards for web-based, multilingual data processing. The interview will cover the below 5 questions and will not take more than 30 minutes. Please let us know on a suitable time and date.</i></td>
+			</tr>
+		</table>
+
+		<p>We identified the following five questions that were designed to gather a quick insight into several aspects of the company activities and specifically the positioning towards the core areas of interest to the LIDER roadmapping activities (Multilinguality, Language Resources, Multilingual Linked Data and Linguistic Linked Data).
+			The questions build up in focus, starting from the core business of the company interviewed, through to their main markets, the multilingual dimension in their business and markets, how any multilingual issues are or could be addressed, and up to the use of standards for addressing these issues in their business and in technology development in particular.
+		</p>
+
+		<table border="1" style="width:100%">
+			<tr>
+				<td><i>1)    What kind of products or services do you provide?<br>
+					2)    What kind of markets are you focused on primarily (financial, chemical, biomedical, ...)<br>
+					3)    Is multilingual data a challenge in your business? Do multilingual issues block your entry into markets in other countries? Any languages in particular? <br>
+					4)    Do you develop or buy language resources and/or tools to address the problem? Do you use linguistic open data sets? Do you see any problem with open data? Would you pay for linguistic data?<br>
+					5)    Do you think that a more standardized approach to language resources and/or tools will benefit your entry into other markets/countries? Do you know about or already use linked data and/or linguistic linked data?<br>
+				</i></td>
+			</tr>
+		</table>
+
+		<p><b>What kind of products or services do you provide?</b></p>
+		<p>The companies interviewed represent a wide scope of commercial services offered, from basic level supporting technologies such as computer-aided translation, terminology management and general Natural Language Processing services up to complete solutions for businesses such as custom-build B2E and B2B systems, digital marketing, brand positioning, marketing campaigns and business and security intelligence. A range of other services were mentioned as well, among which were most central: data mining, data analytics and visualization, knowledge management, web localization.</p>
+
+		<p><b>	What kind of markets are you focused on primarily (financial, chemical, biomedical, ...)</b></p>
+		<p>	We asked this question as we were interested in the indirect reach of the technologies currently used by the companies we interviewed, and thereby in the potential impact of the innovation of such technologies (using Linguistic Linked Data, Multilingual Linked Data) in different markets. Across the companies we interviewed, the health care & biomedical and finance & insurance markets are quite dominant, with most of the companies we interviewed involved in one or both of these markets. Other markets of importance to the companies interviewed are telco, chemicals (including oil & gas), and government (including security), besides markets such as education, legal, retail, energy, automotive, infrastructure, tourism, media, recruitment, IT.</p>
+
+		<p><b>Is multilingual data a challenge in your business? Do multilingual issues block your entry into markets in other countries? Any languages in particular?</b></p>
+		<p>	We received a wide range of answers to this set of questions, however at the core of which the companies interviewed indicated almost unanimously that ‘yes, multilinguality is or will be an issue for us’. Many companies identified the adaptation of their tools to languages other than the one used in their core market, e.g. Spain or Italy, as a major challenge that will be of increasing importance. A number of European companies based on the continent therefore expressed also an existing or potential issue with English, e.g. for entering the US market. Others identified Asian languages, primarily Chinese and Japanese, as their core ongoing and/or future concern. In fact, most companies we interviewed highlighted Chinese in particular as both a very interesting and large market as well as a major challenge. Other language groups mentioned include: ‘European languages’, ‘less used languages’, ‘languages with relatively few native speakers (Dutch, Czech, Hungarian, etc.)’, ‘German, French, Italian (in order to enter the Swiss market)’.</p>
+
+		<p><b>Do you develop or buy language resources and/or tools to address the problem? Do you use linguistic open data sets? Do you see any problem with open data? Would you pay for linguistic data?</b></p>
+		<p>This set of questions was meant to establish the current and potential future interest of industry in open data and in particular open linguistic data, i.e. language resources. The companies interviewed were mostly interested in the use of open data and also open linguistic data, but there were a number of reservations: quality is an important requirement as is integration. Most companies are sympathetic to the idea of open (linguistic) data and would use it but they are concerned that the quality is not high enough for commercial use, or even if it is, there will be issues in integrating the data into their tools and methods. Several companies in fact expressed the fact that they did pay for language resources but often as part of an integrated solution, i.e. external software. There was one notable exception to this, where a company indicated that they had acquired a commercial license for BabelNet (standalone language resource). One company mentioned that open linguistic data is sometimes useful for inspiration (e.g. how to structure things) but not for commercial use. Nevertheless, several of the companies interviewed indicated that they would pay for quality language resources, but this often comes with the additional requirement that it needs to be easy to use and integrate. Around half of the companies interviewed indicated that they do in-house development of language resources.</p>
+
+		<p><b>Do you think that a more standardized approach to language resources and/or tools will benefit your entry into other markets/countries? Do you know about or already use linked data and/or linguistic linked data?</b></p>
+		<p>Most of the interviewed companies did agree enthusiastically with the statement that standards will help their entry into other markets/countries (‘absolutely’, ‘yes agreed’, ‘standardization is important’, ‘standardization is highly desirable’, ‘yes standards are key’). However, there were some reservations from two of the companies as well, but interestingly these coincided exactly with those companies that indicated no experience (or interest) in Linked Data. Almost all of the interviewed companies did have previous experience with and/or knowledge of Linked Data, however only several of them indicated that they actually use Linked Data, with only one of them making a clear statement that they already use Linguistic Linked Data.</p>
+
+		<h1>
+
+
+
+
+	  <h1>3	Content Analytics Seed Use Cases </h1>
+	  <p>
+		  The LD4LT  W3C Community Group acts as Industry Board for the LIDER project. The list of seed use cases were derived from interaction with this group: </p>
+
+		<h2><i>3.1	eLearning, language tutoring and language teaching</i></h2>
+
+
+			<p><b>Industry sector</b></p>
+			<p>Education</p>
+
+			<p><b>Actors and benefits they get from use case</b></p>
+			<p>Companies developing eLearning and language tutoring/teaching systems can improve their software. Learners, i.e. users of the language learning systems, can benefit from systems which use linguistic linked data as a support to language tutoring and language teaching. Improvement of the company’s language tutoring and teaching systems thanks to linking to and exploiting LLOD (Linguistic Linked Open Data) datasets. Improvement of the learner’s user experience and, supposedly, of their learning curve.</p>
+
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>Companies in the eLearning business and particularly those in the language tutoring/teaching domain will use linguistic linked data to improve their software, thereby increasing the amount of variability of language units and items, their cross-lingual interconnections and the availability of cross-media linked content (e.g. concepts linked to their lexicalizations as well as to pictures depicting the concepts).</p>
+
+			<p><b>Examples of beneficiaries</b></p>
+			<p>duolingo.com, fluentify.com</p>
+
+			<p><b>Language technologies involved</b></p>
+			<ul><li>Morphological analysers</li><li>Multilingual dictionaries and encyclopedias</li></ul>
+
+
+			<p><b>Language resources involved</b></p>
+			<p>BabelNet, DBpedia and other datasets available in the LLOD cloud <a href="http://linghub.lider-project.eu/llod-cloud">http://linghub.lider-project.eu/llod-cloud</a></p>
+
+			<p><b>Issues in language resource use including (which are the most important and why, what are the problems and how could they be overcome)</b></p>
+			<p>Importing/exporting between different formats Common formats and data standards, such as common vocabularies and ontologies, are crucial for eLearning businesses to build applications that use use the data that is being published in the LLOD cloud. Apps need a common language for communicating with an API to retrieve information. Improving the quality and quantity of common standards in the LLOD cloud can therefore help application developers interact with the multitude of resources available on the Web.</p>
+
+			<p><b>Critical assessment of use case, e.g. in commercial use, trial only, research prototype, under-development</b></p>
+			<p>Research prototype.</p>
+
+			<p><b>Provided by</b></p>
+			<p>Paola Velardi, UNIROMA1</p>
+
+			<h2><i>3.2	Multilingual dictionaries for Computer-assisted Translation (CAT)</i></h2>
+
+<p><b>Industry sector</b></p>
+<ul>
+	<li>Any</li>
+	<li>Translation industry</li>
+	<li>Computer assisted content providers</li>
+</ul>
+
+			<p><b>Actors and benefits they get from use case</b></p>
+<ul>
+	<li>Developers of dictionaries, encyclopedias, thesauri, ontologies</li>
+	<li>Professional translators</li>
+	<li>In general, consumers and users of large machine-readable, language knowledge resources (e.g. companies building systems that require large amounts of knowledge)</li>
+	<li>Benefit: Enhanced automatic translation experience</li>
+	<li>Translations in the LLOD cloud take all the advantages typical of the LLOD world: reuse of existing information, interlinking (usage examples of the translated expression or word’s synonyms</li>
+</ul>
+
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>Multilingual dictionaries can be seen as a collection of bilingual dictionaries and, as such, can be exploited to improve existing translation or even provide/suggest new translations to all those professional translators who rely on automatic CAT tools. Translations can be furthermore supported by quality indicators which, either automatic or manual, are able to assess how good each suggested translation is, guiding in this manner the final translator in the decision-making process. Furthermore, multilingual dictionaries act as a form of linking between datasets coming from different sources, allowing for easier integration of disparate data sources.</p>
+
+			<p><b>Language technologies involved</b></p>
+			<ul>
+				<li>Information extraction</li>
+				<li>Word sense disambiguation</li>
+				<li>Entity Linking</li>
+				<li>Language resources involved</li>
+				<li>Bilingual dictionaries</li>
+				<li>Aligned corpora (optional)</li>
+				<li>Sense annotated corpora (optional)</li>
+			</ul>
+
+			<p><b>Language resources involved</b></p>
+			<p>http://babelnet.org/</p>
+
+			<p><b>Issues in language resource use including (which are the most important and why, what are the problems and how could they be overcome)</b></p>
+			<p><b>Standards: agreed formats for and meaning of data</b></p>
+				<p>Most language resources that get published on the Web are available in a non standard format, described using non standard vocabularies. This hinders the use of these resources because data scientists need to convert various resources into a common format in order to compare and make use of them. By using common dictionaries, specifically multilingual dictionaries, users can more easily compare and analyze different datasets. Having common standards across language resources is especially useful for Computer Assisted Translation (CAT), because we can harness the multilingual mappings to assist various translation algorithms.</p>
+
+			<p><b>Critical assessment of use case, e.g. in commercial use, trial only, research prototype, under-development</b></p>
+			<p>Research prototype?</p>
+
+			<p><b>Provided by</b><p>
+			<p>Paola Velardi and Roberto Navigli, UNIROMA1</p>
+
+
+
+				<h2><i>3.3	Multilingual Computer Assisted Translation (CAT) with Image assistance</i></h2>
+
+				<p><b>Industry sector</b></p>
+				<ul>
+					<li>Translation industry</li>
+					<li>Computer assisted content providers</li>
+				</ul>
+
+
+				<p><b>Actors and benefits they get from use case</b></p>
+				<ul>
+					<li>Developers of dictionaries, encyclopedias, thesauri, ontologies</li>
+					<li>Professional translators</li>
+					<li>In general, consumers and users of large machine-readable, language knowledge resources (e.g. companies building systems that require large amounts of knowledge)</li>
+				</ul>
+
+				<p><b>Benefit:</b>Enhanced automatic translation experience. Having multimedia content into linguistic linked data allows the end-user to retrieve metadata easily, such as for example creation date, tags associated to images, similar images and so on.</p>
+
+				<p><b>Summary of use case in a few lines</b></p>
+				<p>Nowadays visual information in general is increasingly playing an uprising role in the (Semantic) Web. Having images associated with multilingual dictionary entries, in fact, would make possible to have an unprecedented user’s experience. Professional translators’ effort might well be alleviated if multimedial content were presented to them during the translation process. Indeed, not only the translator would be presented with a list of possible translations but these would also be accompanied with images full of meaning, which without doubt would simplify the translation process, making it close to being instantaneous.</p>
+
+				<p><b>Language technologies involved</b></p>
+				<ul>
+					<li>Information extraction</li>
+					<li>Word sense disambiguation</li>
+					<li>Automatic Image Understanding (optional)</li>
+				</ul>
+
+				<p><b>Language resources involved</b></p>
+				<ul>
+					<li>Bilingual dictionaries</li>
+					<li>Aligned corpora (optional)</li>
+					<li>Sense annotated corpora (optional)</li>
+					<li>Image repository</li>
+					<li>BabelNet</li>
+				</ul>
+
+				<p><b>Issues in language resource use including (which are the most important and why, what are the problems and how could they be overcome)</b></p>
+				<ul>
+					<li>	Developers of translation applications find it hard to obtain image-related information relevant to the translation task at hand. Assisting translators with contextual images is of crucial importance, and can greatly increase the precision of translations. Using resources such as BabelNet that are able to provide contextual image information in a multilingual fashion, will help developers to more easily create these new kinds of applications.</li>
+				</ul>
+
+				<p><b>Critical assessment of use case, e.g. in commercial use, trial only, research prototype, under-development</b></p>
+				<p>Research prototype?</p>
+
+				<p><b>Provided by</b></p>
+				<p>Roberto Navigli, UNIROMA1</p>
+
+
+
+
+			<h2><i>3.4	Text mining for tracking user trends / sentiments</i></h2>
+
+			<p><b>Industry sector</b></p>
+			<ul>
+				<li>e-commerce</li>
+				<li>User profiling</li>
+				<li>Actors and benefits they get from use case</li>
+				<li>Digital goods companies</li>
+				<li>e-Health monitoring</li>
+			</ul>
+
+
+			<p><b>Actors and benefits they get from use case</b></p>
+			<p>Tremendous impact on top digital companies in the market which could exploit the extracted and aligned user data to better address user’s trends, improving the overall user’s satisfaction. Public bodies (e.g. epidemiological and syndromic surveillance organizations, government  institutions) can also benefit from analyzing the effect of public campaigns and better inform their decisions.</p>
+
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>In this digital era, billions of people buy digital goods (cameras, cellphones, tablets, PDAs, etc.) and continuously rely on their favourite social media platform to exchange ideas, comments and impressions about their latest purchase. In fact, for a complete view of the current market’s trends, it is very important not only to have this information extracted and linked to each other, but also to be able to understand users sentiments and opinions about a specific product.</p>
+
+			<p><b>Language technologies involved</b></p>
+			<ul>
+				<li>Information extraction</li>
+				<li>Word sense disambiguation (optional)</li>
+				<li>Automatic sentiment understanding (optional)</li>
+			</ul>
+
+			<p><b>Language resources involved</b></p>
+			<ul><li>Social media corpora/webpages (tweets, sms, whatsapp, instagram)</li></ul>
+
+			<p><b>Examples of beneficiaries</b></p>
+			<p>philips.com, samsung.com, nikon.com</p>
+
+			<p><b>Critical assessment of use case, e.g. in commercial use, trial only, research prototype, under-development</b></p>
+			<p>Research prototype?</p>
+
+			<p><b>Provided by</b></p>
+			<p>Paola Velardi, UNIROMA1</p>
+
+
+
+
+			<h2><i>3.5	User recommendation and profiling</i></h2>
+
+			<p><b>Industry sector</b></p>
+			<ul><il>e-commerce</il><il>User profiling</il></ul>
+
+
+			<p><b>Actors and benefits they get from use case</b></p>
+			<p>any sector in politics, market and business</p>
+
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>Users in social networks such as Twitter express their topical interests through mono directional friendship relations (non-reciprocal links). About 50% of users have at least one follower corresponding to some entity (product or person or place) corresponding to a Wikipedia article. Being able to generalize these links makes it possible to create a network of interests to identify communities and individual users that can be the addressee of political/market campaigns.</p>
+
+			<p><b>Language technologies involved</b><p>
+			<p>Information extraction</p>
+
+			<p><b>Language resources involved</b></p>
+			<p>BabelNet, Twitter</p>
+
+			<p><b>Examples of beneficiaries</b></p>
+			<p>philips.com, samsung.com, nikon.com</p>
+
+			<p><b>Critical assessment of use case, e.g. in commercial use, trial only, research prototype, under-development</b></p>
+			<p>Research prototype?</p>
+
+			<p><b>Provided by</b><p>
+			<p>Paola Velardi, UNIROMA1</p>
+
+			<h2><i>3.6	Multilingual Question Answering using Large Knowledge Resources</i></h2>
+
+			<p><b>Industry sector</b></p>
+			<ul>
+				<li>Any</li>
+				<li>Actors and benefits they get from use case</li>
+			</ul>
+
+			<p><b>Actors and benefits they get from use case:</b></p>
+			<p>Thanks to the exploitation of the LLOD these kind of systems would be able to obtain a better understanding of the given questions independently of the source language.</p>
+
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>Question answering, the task of automatically providing a correct answer to a question, represents one of the longstanding tasks which proved to be harder than expected over the years. Having then a system which is also able to answer a question in a multilingual fashion, regardless of the language or the domain, seems to be even more out of reach. Current technologies, instead, might play a crucial role in this scenario, especially if multilingual knowledge bases (such as BabelNet) and encyclopedic taxonomic information (such as the Wikipedia Bitaxonomy) are integrated. While the former provides concepts normalized across languages, making it possible to understand the question in any language, the latter establishes a relation between each concept and its most suitable generalization. Having the two resources merged then might not only effectively boost performances of question answering but also having the added-value of being multilingual, making it possible to have true Multilingual Question Answering (MQA) tools. The latters would in fact benefit from the the multilingual knowledge base for its ability to discover both named entities and concepts across languages, and from the encyclopedic taxonomy for its generalization power.</p>
+
+			<p><b>Language technologies involved</b></p>
+			<ul>
+				<li>Taxonomy extraction and induction</li>
+				<li>Word sense disambiguation</li>
+				<li>Entity Linking</li>
+				<li>Language resources involved</li>
+				<li>Bilingual dictionaries</li>
+				<li>Aligned corpora (optional)</li>
+				<li>Sense annotated corpora (optional)</li>
+			</ul>
+
+			<p><b>Language resources involved</b></p>
+			<p>http://wibitaxonomy.org/</p>
+			<p>http://babelnet.org/</p>
+
+			<p><b>Provided by</b></p>
+			<p>Roberto Navigli and Tiziano Flati, UNIROMA1</p>
+
+			<h2><i>3.7	Babelfy for news analytics aggregator/provider</i></h2>
+
+			<p><b>Industry sector</b></p>
+			<ul>
+				<li>Information industry</li>
+				<li>Actors and benefits they get from use case</li>
+				<li>News aggregators</li>
+				<li>Owners of gazetteer repositories</li>
+			</ul>
+
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>Joint WSD and EL systems could be applied to latest news and gazetteers for having disambiguated content linked to the LOD, indeed leading a step closer to true LOD-aware news-aggregation websites. This might be useful not only for understanding automatically the most relevant agents occurring in everyday texts (latest news) but also for obtaining real-time content analytics statistics about celebrities and geographical locations, for example according to a certain timeslot or domain of interest.</p>
+
+			<p><b>Actors and benefits they get from use case:</b></p>
+			<p>Current systems mainly exploit domain-specific knowledge (usually expressed in a single language) hampering the development of general purpose method to perform the aforementioned task. Thanks to the LLOD, general framework for the trend analysis could be developed independently of the domain and language and then specialized for the particular domain of interest.</p>
+
+			<p><b>Language technologies involved</b></p>
+			<ul>
+				<li>Word Sense Disambiguation</li>
+				<li>Entity Linking</li>
+				<li>Language resources involved</li>
+				<li>Newswires</li>
+				<li>Gazetteers</li>
+			</ul>
+
+			<p><b>Language resources involved</b></p>
+			<p>http://babelfy.org/</p>
+
+			<p><b>Provided by</b><p>
+			<p>Roberto Navigli, UNIROMA1</p>
+
+			<h2><i>3.8	Babelfy for booking/tripadvisor</i></h2>
+
+			<p><b>Industry sector</b></p>
+			<ul>
+				<li>Recommender Systems Industry</li>
+				<li>Actors and benefits they get from use case</li>
+				<li>Recommendation and travel-related content website</li>
+			</ul>
+
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>Last decade has witnessed an upsurge in the interest into recommendation and travel-related websites, such as booking.com or tripadvisor.com. These services expose very large databases concerning hotels, restaurants, places and end-user amusement services in general. All present the users not only with basic information about the place of interest (such as its position in the world and, possibly, contact numbers/email and quantitative rating information), but often also a textual description and users’ reviews when present. Both textual information and users’ comments are though raw text with no semantic information associated nor interlinking information. Having descriptions and comments automatically annotated with Babelfy would produce mentions pointing to the corresponding point in the LOD cloud, leading in fact towards a truly improved end-user service where information is cross-referenced and interlinked.</p>
+
+			<p><b>Actors and benefits they get from use case:</b></p>
+			<p>Actors: companies that need to analyze and query information about the reviews left by users. By disambiguating and linking concepts within users’ comments, we can essentially transform the textual information, which is hard to query and understand, into structured data, which can more easily be analyzed.</p>
+
+			<p><b>Language technologies involved</b><p>
+			<ul>
+			<li>Word sense disambiguation</li>
+			<li>Entity Linking</li>
+			<li>Language resources involved</li>
+			<li>Product descriptions/reviews</li>
+		</ul>
+
+
+			<p><b>Language resources involved</b></p>
+			<p>http://babelfy.org/</p>
+
+			<p><b>Provided by</b></p>
+			<p>Roberto Navigli, UNIROMA1</p>
+
+			<h2><i>3.9	Tracking the evolution of data in e-Publishing</i></h2>
+
+			<p><b>Industry sector</b></p>
+			<ul>
+				<li>e-commerce</li>
+				<li>Actors and benefits they get from use case</li>
+				<li>e-Publishers, recommendation websites</li>
+			</ul>
+
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>Digital content on the Web, such as e-books and published material in general, is often put through a series of changes and updates which nowadays is hard to follow in a full-fledged automatic manner. Having the changes tracked in such a way that several pieces of information are recorded is extremely important and would ease the publishing and maintenance of digital records (e.g., e-book vending websites).</p>
+
+			<p><b>Actors and benefits they get from use case:</b></p>
+			<p>Companies wanting to analyze the history of published content on the Web could query for a specific published article from a specific date, with a specific title, coming from a specific source. This could allow them to ask finer-grained questions against content that is no longer available, but that could still hold important information.</p>
+
+			<p><b>Language technologies involved</b></p>
+			<ul>
+				<il>Information Extraction</il>
+				<il>Ontology alignment</il>
+				<il>Language resources involved</il>
+				<li>Versioning ontologies</li>
+				<li>Knowledge bases</li>
+			</ul>
+
+			<p><b>Examples of beneficiaries</b></p>
+			<p>amazon.com</p>
+
+			<p><b>Provided by</b></p>
+			<p>Paola Velardi, UNIROMA1</p>
+
+			<h2><i>3.10	Ensuring metadata quality in e-commerce</i></h2>
+
+			<p><b>Industry sector</b></p>
+			<ul>
+				<il>e-commerce</il>
+				<il>Actors and benefits they get from use case</il>
+				<il>e-Publishers, vending websites, recommendation websites</il>
+			</ul>
+
+			<p><b>Actors and benefits they get from use case:</b></p>
+			<p><b>Actors:</b> users wanting to ask finer grained queries against e-commerce type of data.</p>
+			<p>Currently to query information contained in websites such as eBay or Amazon, we rely on search engines. The problem is that we can only query textual information. What if we want to obtain all the products from both Amazon and eBay of a specific type, shipping to a specific location, available at a specific price, etc. The LLOD would provide a means for properly tackling issues with metadata, especially with regards to standardization and alignment, and would make it easier to ask queries against many different e-commerce resources.</p>
+
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>The digital market is undergoing an enormous revolution in terms of quantity of data being sold or published on the Web. However, unfortunately metadata are not aligned/homogenized across domains and websites, so solving user’s queries effectively still remains an issue. Having standards which homogenize and link metadata on the Web would instead play a major role in having the content aligned and thus better queryable.</p>
+
+			<p><b>Language technologies involved</b></p>
+			<ul>
+
+				<il>Information Extraction</il>
+				<il>Ontology alignment</il>
+				<il>Language resources involved</il>
+				<il>Knowledge bases</il>
+
+			</ul>
+
+			<p><b>Provided by</b></p>
+			<p>Paola Velardi, UNIROMA1</p>
+
+			<h2><i>3.11	Exploiting legal administrative content in society</i></h2>
+
+			<p><b>Industry sector</b></p>
+			<ul>
+				<li>legal e-publishers</li>
+				<li>specialized content providers</li>
+			</ul>
+
+			<p><b>Actors and benefits they get from use case</b></p>
+			<ul>
+				<li>University law students</li>
+				<li>In general, law practitioners (attorneys, solicitors, ...)</li>
+				<li>Legal institutions,</li>
+				<li>Public administration</li>
+			</ul>
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>Publishers specialized in legal content need to constantly update their e-resources with new legal content included in the acts approved. Linking all codes published by e-publishers and exploiting the semantic content provided by the official resources can undoubtedly help legal practitioners. Following the track of applicable laws by linking datasets coming from different sources is of great importance in this sector.</p>
+
+			<p><b>Language technologies involved</b></p>
+			<ul>
+			<li>Entity Linking</li>
+			<li>Language resources</li>
+			<li>Content resources and knowledge bases</li>
+			<li>Taxonomy extraction</li>
+			<li>Ontology evolution</li>
+			</ul>
+			<p><b>Issues in language resource use</b></p>
+			<ul>
+			<li>Privacy, confidentiality and access control</li>
+			<li>Copyright and usage rights</li>
+			<li>Formats and APIs</li>
+			</ul>
+			<p><b>Examples of beneficiaries</b></p>
+			<p>Publishers specialized in legal content</p>
+			<p><b>Provided by</b></p>
+			<p>Guadalupe Aguado-de-Cea and Asunción Gómez-Pérez, UPM</p>
+
+			<h2><i>3.12	Linking diverse linguistic resources for Spanish</i></h2>
+
+			<p><b>Industry sector</b></p>
+			<ul>
+			<li>Education</li>
+			<li>Linguistic content providers</li>
+			<li>Mediators and translators</li>
+			</ul>
+			<p><b>Actors and benefits they get from use case</b></p>
+			<p>The Spanish Royal Academy</p>
+			<ul>
+			<li>In general, all users</li>
+			<li>NLP providers and developers</li>
+			<li>Public administration</li>
+			</ul>
+
+			<p><b>Summary of use case in a few lines</b></p>
+			<p>The Royal Spanish Academy has developed many resources for Spanish and can improve the exploitation of its resources by linking the linguistic data contained in their dictionaries, corpora, and other books, such as the Orthography. General users and more specifically NLP developers can benefit from this linking. Moreover this will contribute to improve the presence of Spanish resources in the LLOD cloud.</p>
+
+			<p><b>Language technologies involved</b></p>
+			<ul>
+			<li>Entity Linking</li>
+			<li>Corpora</li>
+			<li>User-based Dictionaries</li>
+			<li>Ontologies</li>
+			<li>Lemon model</li>
+			<li>Sparql</li>
+			<li>Mapping markup languages</li>
+			<li>Mapping images to dictionary entries</li>
+			</ul>
+			<p><b>Examples of beneficiaries</b></p>
+			<ul>
+			<li>Users of Spanish contents</li>
+			<li>NLP developers</li>
+			<li>All users in general</li>
+			</ul>
+			<p><b>Provided by</b></p>
+			<p>Guadalupe Aguado-de-Cea and Asunción Gómez-Pérez, UPM</p>
+
+			<h2><i>3.13	Digital content enrichment for SME publishing companies</i></h2>
+
+			<p>Industry sector:</p>
+			<ul>
+			<li>Publishing industry</li>
+			</ul>
+			<p><b>Actors and benefits they get from use case:</b></p>
+			<p>Small and medium sized publishing companies</p>
+
+			<p><b>Summary of use case in a few lines:</b></p>
+			<p>Book publishers have a need for workflows and technologies that allow them to enrich e-books with additional information. In that way, it is possible for book publishers to create an added value for readers that purchase an e-book, rather than only the print book.</p>
+			<p>The necessary technologies are available in large-scale enrichment platforms. However, these are expensive, mostly use proprietary enrichment mechanisms, and are not suitable for the SME oriented publishing industry.  Linguistic linked data, available in standardized formats and across languages, can help to boost this industry.</p>
+
+			<p><b>Language technologies involved:</b></p>
+			<ul>
+			<li>Entity linking</li>
+			<li>Content resources and knowledge bases</li>
+			</ul>
+
+			<p><b>Language resources involved:</b></p>
+
+			<p><b>Issues in language resource use including (which are the most important and why, what are the problems and how could they be overcome):</b></p>
+			<ul>
+			<li>formats and APIs</li>
+			<li>cost</li>
+			<li>standards: agreed formats for and meaning of data</li>
+			<li></li>importing/exporting between different formats</ul>
+			</ul>
+
+			<p><b>Critical assessment of use case, e.g. in commercial use, trial only, research prototype, under-development:</b></p>
+			<p>The use case is a WP in the FREME project. Main partner responsible is iMinds.</p>
+
+			<h2><i>3.14	Access to open agricultural and food data</i></h2>
+
+			<p><b>Industry sector:</b></p>
+			<p>SMEs generating revenue with public sector information</p>
+
+			<p><b>Actors and benefits they get from use case:</b></p>
+			<ul>
+			<li>The SMEs providing the information</li>
+			<li>The users of the information (e.g. decision makers in the realm of agriculture planning)</li>
+			</ul>
+
+			<p><b>Summary of use case in a few lines:</b></p>
+			<p>In the area of agriculture and food safety information, currently content metadata is not available in multiple languages, needs to be curated manually, and the metadata is not linked to external data sources. Multilingual and interlinked data can improve the decision-making in this highly demanded area of public sector information.</p>
+
+			<p><b>Language technologies involved:</b></p>
+			<ul>
+				<li>Multilingual entity linking</li>
+				<li>Machine translation</li>
+			</ul>
+
+			<p><b>Language resources involved:</b></p>
+			<ul>
+			<li>Domain specific dictionaries and knowledge bases</li>
+			</ul>
+
+			<p><b>Issues in language resource use including (which are the most important and why, what are the problems and how could they be overcome):</b></p>
+			<ul>
+			<li>publishing and maintenance of resources</li>
+			<li>cost</li>
+			<li>formats and APIs</li>
+			</ul>
+
+			<p><b>Critical assessment of use case, e.g. in commercial use, trial only, research prototype, under-development:</b></p>
+			<p>The use case is a WP in the FREME project. Main partner responsible is Agro-Know.</p>
+
+			<h2><i>3.15	Personalised Web content recommendation</i></h2>
+
+			<p><b>Industry sector:</b></p>
+			<p>Startup in the area of recommender systems</p>
+
+			<p><b>Actors and benefits they get from use case:</b></p>
+			<p>The startup companies benefit by getting a value compared to competitors.</p>
+
+			<p><b>Summary of use case in a few lines:</b></p>
+			<p>Personalised content recommendations for content rich websites help to increase engagement of users on a website. Currently, many such system focus on English web sites. Using linguistic linked data, they can expand to the non-English online content publishing market.</p>
+
+			<p><b>Language technologies involved:</b></p>
+			<ul>
+				<li>Multilingual entity linking</li>
+				<li>Machine translation</li>
+			</ul>
+
+			<p><b>Language resources involved:</b></p>
+			<p>Issues in language resource use including (which are the most important and why, what are the problems and how could they be overcome):</p>
+			<ul>
+			<li>cost</li>
+			<li>quality and how to measure it</li>
+			<li>copyright and usage rights</li>
+			<li>formats and APIs</li>
+			<li>standards: agreed formats for and meaning of data</li>
+			</ul>
+
+			<p><b>Critical assessment of use case, e.g. in commercial use, trial only, research prototype, under-development:</b></p>
+			<p>The use case is a WP in the FREME project. Main partner responsible is <a href="http://wripl.com">Wripl Technologies ltd.</a></p>
+
+			<h2><p>3.16	Using linked data in children’s education</p></h2>
+
+			<p><b>Industry sector</b></p>
+			<ul>
+			<li>Education</li>
+			<li>Publishers of children's books</li>
+			<li>User-based dictionaries</li>
+			</ul>
+
+			<p><b>Actors and benefits they get from use case</b></p>
+			<ul>
+			<li>Education sectors (teachers, users, ...)</li>
+			<li>Small and medium publishing companies</li>
+			</ul>
+
+			<p><b>Summary of use case in a few lines:</b></p>
+			<p>Children's books publishers need to provide users with more appealing ways of exploiting their e-materials. So, linguistic linked data technologies, available in standardized formats,  will help them to reuse their databases by linking images and texts, as well as the content of their different dictionaries. This effort will add value to the new publishing products, and consequently boost this industry.</p>
+
+			<p><b>Language technologies involved:</b></p>
+			<ul>
+			<li>Entity linking</li>
+			<li>Content resources and knowledge bases</li>
+			<li>Image and text mapping</li>
+			<li>Taxonomy extraction</li>
+			</ul>
+
+			<p><b>Language resources involved:</b></p>
+			<p>Issues in language resource use including (which are the most important
+			and why, what are the problems and how could they be overcome):</p>
+			<ul>
+			<li>formats and APIs</li>
+			<li>cost</li>
+			<li>standards used in representing images and linguistic information</li>
+			<li>importing/exporting between different formats</li>
+			</ul>
+
+			<p><b>Provided by</b></p>
+			<p>Guadalupe Aguado-de-Cea and Asunción Gómez-Pérez, UPM</p>
+
+			<h1><b>Survey Results</b></h1>
+			<p>The main goal of this survey is to gather a quantitative understanding of current industrial needs, requirements and use cases that will help define a roadmap for future R&D activities in multilingual/multimedia content analytics. Other implicit goals of this survey are to improve awareness of the potential of linked data for NLP applications, as well as to make known existing expertise in this area in Europe, and to identify potential partners for research. In a first stage, the survey was available online and the 24 participants were recruited by email using our contact lists as well as other mailing lists. The same survey was also distributed to 63 members of the language resources community at LREC 2014, to 31 members of the multilingual web community at the Multilingual Web Workshop 2014, and to 27 members of the Localization community at Localization World 2014. The same questions were given to all the participants, but the survey provided options for content analytics use cases and language resource usage that differed in scope based on the focus of the community.  For example, the use cases provided to the Localization community were mostly focused on translation, spell checking and grammar checking, while the use cases provided to the Language Resources community covered a much broader range of NLP application areas.</p>
+
+			<p>The questions covered by the survey are organized in four main parts including questions about participant profile, content analytics use cases, the use of language resources, and awareness/maturity in using linked data.</p>
+
+			<h2><b>4.1	Participant Profile</b></h2>
+
+			<p>The first part of the survey is concerned with gathering information about the profile of each participant. Participants were asked about the type of organization they are associated with, allowing them to choose between multiple options. While circulating this survey, we specifically stated our interest in industry participation. Each participant can have more than one affiliation and can be active in multiple industry sectors. Therefore, participants were allowed to choose more than one option in both cases. Out of the total number of 145 subjects that participated in this survey, 73 participants reported as organisation type SMEs, large companies, public sector organisations, non-profit organisations, and freelancing. The other 72 participants (49%) identified themselves as members of universities or other research organisations. Of these, 53 responded to the survey conducted at LREC’14, which is a largely academic event with only 15% industrial participation. As can be seen in Figure 2 the breakdown of responders allows us to gain an insight into the differences in priorities between the research community and the broader user community.</p>
+
+			<figure id="fig2">
+				<center>
+					<img style="width: 60%" src="./img/survey.png" alt="Breakdown of survey responder by organisational type">
+					<figcaption><span class="fig-title">Breakdown of survey responder by organisational type</span></figcaption>
+				</center>
+			</figure>
+
+			<p>Table 1 presents a detailed breakdown of the participants by organisation type for each community. </p>
+
+				<center>
+					<img style="width: 60%" src="./img/table1.png" alt="Table 1: Breakdown of respondents by organisation type and community">
+					<figcaption><span class="fig-title">Table 1: Breakdown of respondents by organisation type and community</span></figcaption>
+				</center>
+
+			<p>Table 2 gives an overview of the most active industry sectors in this area, with the Localization, Libraries, Museums and Digital Humanities, and Media, News and Journalism sectors taking the lead. For the Localization community we gathered information about more fine grained areas, identifying Translation, Technical Content Localization, Website Localization, and Software Localization as the most prominent service/product areas.</p>
+
+
+			<center>
+				<img style="width: 60%" src="./img/table2.png" alt="Table 2: Number of responders by industry sector">
+				<figcaption><span class="fig-title">Table 2: Number of responders by industry sector</span></figcaption>
+			</center>
+
+			<h2><b>4.2	Use Cases</b></h2>
+
+			<p>The second part of the survey is concerned with identifying content analytics use cases that are of interest to the community. Figure 3 gives the most popular use cases across the four surveys. The most popular use case by a margin are the extraction of information from unstructured data and machine translation. The next group of use cases in terms of popularity covers use cases such as supporting development of terminologies, sentiment and opinion mining, and linguistic research. Our main goal for this survey is to identify industry use cases, therefore we also give a detailed analysis based on the participant profile. </p>
+
+			<figure id="fig3">
+				<center>
+					<img style="width: 60%" src="./img/use_cases.png" alt="Most popular 19 use cases across the four surveys">
+					<figcaption><span class="fig-title">Most popular 19 use cases across the four surveys</span></figcaption>
+				</center>
+			</figure>
+
+<p>Figure 4 breaks down the proportion of support for these use cases from industry and academia respectively, indicating some difference in priorities between the two groups.</p>
+
+			<figure id="fig4">
+				<center>
+					<img style="width: 60%" src="./img/use_cases_industry_academic.png" alt="Break down of support for most popular use caes by industry and academia">
+					<figcaption><span class="fig-title">Break down of support for most popular use caes by industry and academia</span></figcaption>
+				</center>
+			</figure>
+
+<p>Therefore in Table 5, we focus in particular on popular topics according to industry participants, including participants from SMEs, large companies, public sector organisations, non-profit organisations, and participants that are freelancers. Machine translation has a higher number of votes in this subgroup, but the main three topics remain the same.</p>
+
+			<center>
+				<img style="width: 60%" src="./img/table4.png" alt="Table 4: Top use cases based on answers from industry responders">
+				<figcaption><span class="fig-title">Table 4: Top use cases based on answers from industry responders</span></figcaption>
+			</center>
+
+<p>A similar analysis for participants that work in a university or research organisation is presented in Table 6. These answers show a higher preference for more theoretical areas such as linguistic research, parsing, annotation, and word sense disambiguation, that have wide applications but that are not directly considered as use cases by industry.</p>
+
+			<center>
+				<img style="width: 60%" src="./img/table5.png" alt="Table 5: Top use cases based on answers from academia responders">
+				<figcaption><span class="fig-title">Table 5: Top use cases based on answers from academia responders</span></figcaption>
+			</center>
+
+<p>A more fine-grained analysis of popular use cases for each community shows a preference for use cases such as Translation Memory Leverage, Spell Checking, and Statistical Machine Translation for the Localization community. On the other hand, the multilingual web community shows more interest for information extraction, semantic search, expert finding and machine translation. Finally, the most popular use cases for the Language Resources community are Parsing, Word Sense Disambiguation, and PoS Tagging.</p>
+
+			<h2><b>4.3	Use of Language Resources</b></h2>
+
+			<p>This part of the survey is concerned with mapping industrial use of existing language resources. Participants were asked about the type of language resource that they make use of in their daily activities, as can be seen in Table 7. Dictionaries, terminologies, translation memories, corpora, and machine translation systems are the most widely used resources by the industrial community.</p>
+
+			<figure id="fig5">
+				<center>
+					<img style="width: 60%" src="./img/language_resource.png" alt="Most popular language resource types">
+					<figcaption><span class="fig-title">Most popular language resource types</span></figcaption>
+				</center>
+			</figure>
+
+			<p>The next question addresses several aspects horizontal to language resources, i.e. those not tied to a particular use case but likely to be of interest across multiple use cases or applications. Based on the answers given by the participants, the main concerns about language resources are related to open formats, licensing, usage costs and quality of language resources, as can be seen in Figure 6.</p>
+
+			<figure id="fig6">
+				<center>
+					<img style="width: 60%" src="./img/language_type.png" alt="Most popular horizontal language resource types">
+					<figcaption><span class="fig-title">Most popular horizontal language resource types</span></figcaption>
+				</center>
+			</figure>
+
+<p>The third question related to the use of language resources is concerned with the location of language resources used. The majority of the participants make use of a mixture of language resources that are produced both within their organisation and by external parties, as can be seen in Figure 7.</p>
+
+			<figure id="fig7">
+				<center>
+					<img style="width: 60%" src="./img/location_of_language.png" alt="Location of language resource">
+					<figcaption><span class="fig-title">Location of language resource</span></figcaption>
+				</center>
+			</figure>
+
+			<h2>fr<b>4.4	Awareness/maturity in using Linked Data</b></h2>
+			<p>The last part of the survey gathers information about the awareness and maturity of using Linked Data and Linguistic Linked Data, in Figure 8 and 9, respectively. A large number of the survey participants, more exactly 52, reported that they are very aware of Linked Data. But the majority of the responders have only a limited or no awareness of Linked Data.</p>
+
+			<figure id="fig8">
+				<center>
+					<img style="width: 60%" src="./img/linked_data_awareness.png" alt="Linked Data Awareness">
+					<figcaption><span class="fig-title">Linked Data Awareness</span></figcaption>
+				</center>
+			</figure>
+
+			<p>The same situation can be observed for Linguistic Linked Data, with an even smaller number of responders (i.e., 44) reporting a high level of knowledge about the topic.</p>
+
+			<figure id="fig9">
+				<center>
+					<img style="width: 60%" src="./img/linguistic_linked_data_awareness.png" alt="Linguisitic Linked Data Awareness">
+					<figcaption><span class="fig-title">Linguisitic Linked Data Awareness</span></figcaption>
+				</center>
+			</figure>
+
+<h1><b>5	Content Analytics Industry Roadmapping Workshops</b></h1>
+
+			<p>The following Industry roadmapping workshops were organised on behalf of the Ld4LT community to gather use cases and requirements from a range of industry and public sector organisations</p>
+
+
+<ul>
+
+	<li>Roadmapping workshop at the European Data Forum 2014, 21 March https://www.w3.org/community/ld4lt/wiki/LD4LT_Group_Kick-Off_and_Roadmap_Meeting</li>
+	<li>Roadmapping workshop May 8th-9th in Madrid, co-located with the Multilingual Web Workshop https://www.w3.org/community/ld4lt/wiki/LD4LT_Group_Madrid_May_2014_Meeting</li>
+	<li>Roadmapping workshop 4th-6th of June, WS at Localization World (Dublin) http://www.localizationworld.com/lwdub2014/feisgiltt/</li>
+	<li>Roadmapping workshop 2nd of September, WS at Semantics Conference (Leipzig) http://mlode2014.nlp2rdf.org/lider-roadmapping-workshop/</li>
+
+</ul>
+
+			<p>
+
+				A summary of the roadmapping activities that is constantly being updated is given in the LD4LT wiki at https://www.w3.org/community/ld4lt/wiki/Lider_roadmapping_activities.
+				The outcome of the roadmapping activities has been documented in detail in LIDER deliverables [D4.5], [D4.6] and [D4.9].
+
+				In figure 2 we rought distribute the participant organisations from the workshops sectorially by the area in the classification sector that best applies to them. This show a good distribution across all areas of concern, but with particularly strong representation of commercial companies interested in customer engagement - a key objective of the workshop series.
+
+
+
+			</p>
+
+			<figure id="fig10">
+				<center>
+					<img style="width: 60%" src="./img/workshop.png" alt="Workshop participants distributed around classification framework">
+					<figcaption><span class="fig-title">Workshop participants distributed around classification framework</span></figcaption>
+				</center>
+			</figure>
+
+
+<p>
+
+	In figure 3 we classify the use cases and requirements identified in the summaries of the workshop provided by WP4 according to the classification framework. This indicates that many issues actually reside in the interaction of pairs or even all three areas. This may reflect a certain degree of consensus on shared priorities that could have formed through presentation and discussion in the workshops prior to the point where participant were asked to express their requirements and use case priorities. Equally, however, it could reflect pre-exisitng convergence on priorities.
+
+</p>
+
+			<figure id="fig11">
+				<center>
+					<img style="width: 60%" src="./img/classification_of_requirements.png" alt="Classification of requirements and use cases gathered from the 4 Roadmapping Workshops">
+					<figcaption><span class="fig-title">Classification of requirements and use cases gathered from the 4 Roadmapping Workshops</span></figcaption>
+				</center>
+			</figure>
+
+
+			<h1><b>6	Conclusions and Recommendations</b></h1>
+
+			<p>Linguistic Linked Data has the potential to increase efficiency and productivity significantly in the language industries and thereby indirectly as well in the larger, more mainstream industry sections that the language industries serve. The aim of the work reported in deliverables D1.1.1 and D1.1.2, as well as of the LIDER project in general, has been to identify and possibly measure this potential more closely through a number of instruments, including interviews, surveys and workshop. Through these, we succeeded in reaching out to many representatives of the relevant language industry communities, e.g., in localization, terminology management, content analytics, and thereby to gather evidence of the importance of language resources for these industries and indirectly for their (international, multilingual) customers. Some of our results were in line with expectations, such as the fact that multilinguality is viewed as an increasing challenge for language industry companies and again indirectly also for their customers, i.e., multinational and global companies that operate in multiple markets with multiple language requirements. The growing interest in language support for Asian languages and in particular Chinese is a part of that. On the other hand, the specific focus of attention was sometimes surprising, such as the increased concern with language support for English that was mentioned in our interviews by a number of companies based on the European continent.</p>
+
+<p>Nevertheless, our objective to map the requirements of industry in Linguistic Linked Data was met with important restrictions as well. First and foremost we need to realize that industry is not primarily interested in specific formats or approaches such as Linked Data, RDF, XML, etc. The interest is in solutions for existing or emerging problems on the short-term, as well as mid-term interest in increasing efficiency and productivity through innovation and modernization. A further restriction we encountered in our survey, interview and workshop based analysis is the confidentiality aspect of most of the planning and strategy in industry. Commercial interests significantly restrict the scope of answers given to us by industry representatives. This highlights the current competitive and innovative nature of the market for language services, but this may also serve to impede broad engagement in the development and adoption of data interoperability solutions. Finally, a further and more specific restriction has been the innovative nature itself of Linguistic Linked Data, which limits its exposure to early adopters only at this stage, i.e., there is not yet a broad familiarity with the concepts and possibilities involved, especially in industry.</p>
+
+			<p>Keeping these restrictions in mind, our overall analysis has identified a growing interest in the potential of Linguistic Linked Data as an enabler for increased standardization in the language industries that will help improve efficiency, productivity and integration. Unfortunately however, this potential is not yet realized as a comprehensive ecosystem is missing. Our overall recommendation therefore is to develop such an ecosystem of Linguistic Linked Data based infrastructures, plug-n-play architectures, NLP services, language resources etc., all of which will start feeding of each other, increasing their respective commercial value. In this context it is important to highlight again the identified requirement of easy integration, in addition of quality, in respect of language resources.</p>
+
+			<p>We further recommend to support the development of such a Linguistic Linked Data based ecosystem by providing incentives to SMEs and industry in general to build the required infrastructures, to develop Linguistic Linked Data based NLP services and to design the relevant architectures. More in general, we propose to encourage multinational and global industry and European industry in particular to also build on such an emerging ecosystem, again by providing incentives such as requirements for the use of Linguistic Linked Data based solutions in EU tenders for language services etc. As soon as an ecosystem starts developing in this way, it will increasingly gain traction and provide further incentives to the language industries in particular to start investing in this, as well as for the larger, more mainstream industry sections that the language industries serve to start demanding Linguistic Linked Data based solutions.</p>
+
+			<h2><b>6.1	Mapping to Strategic Research and Innovation Agendas</b></h2>
+
+			<p>To assist in realising the above recommendations in the near to medium term, LIDER aims to align them with a Research Roadmap for Linguistic Linked Data. In initial version of this Roadmap was presented in [D3.2.1] and a revised version will be presented in upcoming deliverable D3.2.2. This Roadmap in turn needs both be informed by and influence the Strategic Research and Innovation Agenda (SRIA) settings that is undertaken periodically by the EC to guide the design of upcoming Research and Innovation work programmes. SRIAs of relevance to research roadmapping for Linguistic Linked Data are:</p>
+
+<ul>
+
+	<li>the Big Data SRIA published in January 2015 that has provided the basis for data related work programme items in H2020, and which therefore provides a framework within which the LIDER Research Roadmap must operate</li>
+	<li>the Language Technology SRIA which is under development in 2015, and which is therefore influenced by the LIDER Research Roadmap.</li>
+
+</ul>
+
+<p>
+	To ease the integration of the recommendation gathered above from stakeholder requirements and use cases with these SRIAs, we map them here onto the structures used on those documents.
+
+</p>
+
+			<p>
+				The LT SRIA is structured into three layers, as depicted in Figure 12. The first addressing technology solutions is split into solution for Public Services and solutions for businesses. These map directly onto the requirements and use cases classification for Global Customer Engagement and Public Sector and Civil Society. However, while the LT SRIA identifies several specific application domains, the focus our engagement has focussed on services used within those domains, i.e. specific support services such as Localisation, Content Analytics and Data Curation. This reflects the specialised nature of language services and the immediate interest their providers have in improving the curation and management of language resources. The requirements and use cases identified in this document therefore relate more directly to the service identified for the intersection of the public services and business solutions areas. In particular the Digital Translation Centre identified at this intersection ties in well with a localisation industry better integrated with language technologies supported by Linguistic Linked Data.
+
+			</p>
+
+			<figure id="fig12">
+				<center>
+					<img style="width: 60%" src="./img/layer_structure.png" alt="Layer structure of the Language Technology SRIA, version 0.5, April 2015">
+					<figcaption><span class="fig-title">Layer structure of the Language Technology SRIA, version 0.5, April 2015</span></figcaption>
+				</center>
+			</figure>
+
+<p>
+
+	The emphasis on language resources, however, naturally focuses many of the requirements and use cases identified in this document at the LT SRIA layers dealing with Language Technology Services Platforms and Infrastructure. In particular the items classified under Linguistic Linked Data Life Cycle and Value Network map well onto this layer. In particular, the priority focus revealed on data interoperability, licensing, usage costs and quality are all important areas to be supported by common platform functions.
+
+	Such common platform function can in turn be aligned with the  major data processing step identified in the Big Data SRIA, specifically: Data Generation & Acquisition; Data Analysis Processing; Data Storage & Curation and Data Visualisation Usage and Services. Further analysis is required however to determine which platform functions can be provided by existing services and which require further research and innovation activities. Such analyses will be provided in the upcoming LIDER deliverable on a Reference Architecture and Research Roadmap.
+
+
+
+</p>
+
+			<h1><b>7	References</b></h1>
+
+			<p>
+				[D.3.2.1] Roadmap for the use of linguistic linked data for content analytics - v1.0<br>
+				[D4.5] First Roadmapping Workshop Athens v1.1<br>
+				[D4.6] Roadmapping Workshops Madrid Dublin v1.1<br>
+				[D4.9] Fourth Roadmapping Workshop Report - v1.2<br.></br.>
+
+			</p>
+
+
+
+</body>
+<script>
+ setTimeout(function(){CodeMirror.colorize();}, 20);
+</script>
+
+</html>
